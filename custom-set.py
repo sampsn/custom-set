@@ -1,7 +1,6 @@
 class CustomSet():
-    list = []
     def __init__(self):
-        pass
+        self.list = []
 
     def add(self, item):
         if item not in self.list:
