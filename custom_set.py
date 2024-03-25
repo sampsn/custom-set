@@ -1,4 +1,4 @@
-class CustomSet():
+class CustomSet:
     def __init__(self):
         self.list = []
 
@@ -7,14 +7,18 @@ class CustomSet():
             self.list.append(item)
 
     def remove(self, item):
-        if item in self.list:
-            self.list.remove(item)
+        try:
+            if item in self.list:
+                self.list.remove(item)
+        except KeyError:
+            print("Item not removed, moving forward")
 
     def as_list(self):
         return self.list
 
     def clear(self):
         self.list = []
+
 
 def main():
     my_set = CustomSet()
@@ -34,6 +38,7 @@ def main():
 
     my_set.clear()
     print(my_set.as_list())
+
 
 if __name__ == "__main__":
     main()
