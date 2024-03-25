@@ -7,11 +7,10 @@ class CustomSet:
             self.list.append(item)
 
     def remove(self, item):
-        try:
-            if item in self.list:
-                self.list.remove(item)
-        except KeyError:
-            print("Item not removed, moving forward")
+        if item in self.list:
+            self.list.remove(item)
+        else:
+            raise KeyError("Item not in list")
 
     def as_list(self):
         return self.list
